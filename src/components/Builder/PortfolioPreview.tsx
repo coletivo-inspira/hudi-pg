@@ -8,7 +8,7 @@ interface PortfolioPreviewProps {
 
 export function PortfolioPreview({ draft }: PortfolioPreviewProps) {
   const previewProjects = draft.projects.slice(0, 3);
-  const previewBlocks = draft.blocks.slice(0, 3);
+  const previewBlocks = (draft.blocks ?? []).slice(0, 3);
 
   return (
     <aside className={styles.previewPanel} aria-label="Prévia do portfólio">
