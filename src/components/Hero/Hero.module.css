@@ -1,0 +1,183 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(112deg, var(--hudi-deepest), var(--hudi-deep));
+  color: var(--hudi-white);
+}
+
+.grid {
+  display: grid;
+  min-height: calc(100svh - 4.5rem);
+  align-items: center;
+  gap: var(--space-12);
+  padding-block: var(--space-16);
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+}
+
+.copy h1 {
+  margin-top: var(--space-3);
+  font-size: clamp(3.75rem, 10vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.9;
+}
+
+.lead {
+  max-width: 38rem;
+  margin-top: var(--space-6);
+  color: #dbeafe;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.secondary {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin-top: var(--space-8);
+  color: #bfd7ff;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.signals li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.signals li::before {
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--hudi-light);
+  content: "";
+}
+
+.stage {
+  position: relative;
+  min-height: 25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  box-shadow: 1.25rem 1.25rem 0 rgba(8, 19, 47, 0.52);
+}
+
+.canvas {
+  position: absolute;
+  inset: 12% 8%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(248, 250, 252, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.canvasBar {
+  display: flex;
+  height: 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--space-3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #bfd7ff;
+  font-size: 0.68rem;
+}
+
+.canvasBar span:last-child {
+  padding: 0.18rem 0.45rem;
+  background: var(--hudi-action);
+  color: white;
+}
+
+.block {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.blockOne {
+  top: 24%;
+  left: 8%;
+  width: 62%;
+  height: 24%;
+}
+
+.blockTwo {
+  top: 56%;
+  left: 8%;
+  width: 39%;
+  height: 28%;
+}
+
+.blockThree {
+  top: 56%;
+  right: 8%;
+  width: 38%;
+  height: 28%;
+  background: rgba(96, 165, 250, 0.32);
+}
+
+.copyLine {
+  position: absolute;
+  left: 12%;
+  height: 0.5rem;
+  background: #e8f1ff;
+}
+
+.lineOne {
+  top: 32%;
+  width: 42%;
+}
+
+.lineTwo {
+  top: 38%;
+  width: 28%;
+  opacity: 0.55;
+}
+
+.cursor {
+  position: absolute;
+  top: 31%;
+  left: 58%;
+  width: 0.14rem;
+  height: 1.25rem;
+  background: var(--hudi-light);
+}
+
+.tag {
+  position: absolute;
+  right: 2%;
+  bottom: 4%;
+  padding: var(--space-2) var(--space-3);
+  background: var(--hudi-white);
+  color: var(--hudi-deepest);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+@media (min-width: 60rem) {
+  .grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(28rem, 0.95fr);
+    padding-block: var(--space-20);
+  }
+
+  .stage {
+    min-height: 34rem;
+  }
+}
+

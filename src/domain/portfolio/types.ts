@@ -11,6 +11,15 @@ export type UserBlockKind =
 
 export type AdminBlockKind = UserBlockKind | "trusted-html";
 
+export type OptionalUserBlockKind = Exclude<UserBlockKind, "hero" | "projects">;
+
+export interface PortfolioBlock {
+  id: string;
+  kind: OptionalUserBlockKind;
+  title: string;
+  content: string;
+}
+
 export interface PortfolioProject {
   id: string;
   title: string;
@@ -29,6 +38,7 @@ export interface PortfolioDraft {
   email: string;
   instagram: string;
   projects: PortfolioProject[];
+  blocks: PortfolioBlock[];
   consentToReview: boolean;
 }
 
@@ -38,4 +48,3 @@ export interface PublicationRequest {
   requestedSlug: string;
   draft: PortfolioDraft;
 }
-

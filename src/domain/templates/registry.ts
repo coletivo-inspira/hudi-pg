@@ -1,5 +1,6 @@
 import type {
   AdminBlockKind,
+  OptionalUserBlockKind,
   PortfolioDraft,
   ThemeId,
   UserBlockKind,
@@ -22,23 +23,41 @@ export interface TemplateManifest {
   themeIds: readonly ThemeId[];
 }
 
+export interface BlockManifest {
+  kind: OptionalUserBlockKind;
+  name: string;
+  description: string;
+}
+
+export const userBlockCatalog: readonly BlockManifest[] = [
+  { kind: "about", name: "Texto livre", description: "Uma seção de contexto ou manifesto." },
+  { kind: "gallery", name: "Galeria", description: "Contexto para uma seleção de imagens." },
+  {
+    kind: "testimonials",
+    name: "Depoimentos",
+    description: "Relatos de clientes, parceiros ou público.",
+  },
+  { kind: "links", name: "Links", description: "Atalhos para canais e materiais externos." },
+  { kind: "contact", name: "Contato", description: "Uma chamada para conversar ou contratar." },
+] as const;
+
 export const themes: readonly ThemeManifest[] = [
   {
     id: "hudi-blue",
     name: "Hudi Blue",
-    description: "Azul Hudi, camadas claras e foco em conversao.",
+    description: "Azul Hudi, camadas claras e foco em conversão.",
     previewTone: "blue",
   },
   {
     id: "editorial-light",
     name: "Editorial",
-    description: "Muito respiro, contraste tipografico e leitura longa.",
+    description: "Muito respiro, contraste tipográfico e leitura longa.",
     previewTone: "light",
   },
   {
     id: "deep-focus",
     name: "Deep Focus",
-    description: "Azul profundo para trabalhos visuais e portfolios autorais.",
+    description: "Azul profundo para trabalhos visuais e portfólios autorais.",
     previewTone: "deep",
   },
 ] as const;
@@ -85,8 +104,8 @@ export function createDefaultDraft(): PortfolioDraft {
     themeId: "hudi-blue",
     displayName: "Seu nome",
     profession: "Sua especialidade",
-    tagline: "Uma frase clara sobre o que voce faz.",
-    bio: "Conte brevemente sua historia, seu trabalho e o impacto que deseja criar.",
+    tagline: "Uma frase clara sobre o que você faz.",
+    bio: "Conte brevemente sua história, seu trabalho e o impacto que deseja criar.",
     slug: "seu-nome",
     email: "",
     instagram: "",
@@ -94,11 +113,11 @@ export function createDefaultDraft(): PortfolioDraft {
       {
         id: "project-1",
         title: "Projeto em destaque",
-        description: "Explique o desafio, sua contribuicao e o resultado.",
+        description: "Explique o desafio, sua contribuição e o resultado.",
         url: "",
       },
     ],
+    blocks: [],
     consentToReview: false,
   };
 }
-
