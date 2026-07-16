@@ -13,6 +13,7 @@ const baseDraft: PortfolioDraft = {
   email: "joao@example.com",
   instagram: "joaofoto",
   projects: [],
+  blocks: [],
   consentToReview: true,
 };
 
@@ -37,4 +38,3 @@ describe("createPublicationRequest", () => {
     expect(request.requestedAt).toBe("2026-07-16T12:00:00.000Z");
   });
 });
-

@@ -1,0 +1,50 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--hudi-line);
+  background: rgba(248, 250, 252, 0.94);
+  backdrop-filter: blur(16px);
+}
+
+.inner {
+  display: flex;
+  min-height: 4.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.brand {
+  color: var(--hudi-deepest);
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-6);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.nav a {
+  transition: color var(--duration-fast) ease;
+}
+
+.nav a:hover {
+  color: var(--hudi-action);
+}
+
+.cta {
+  min-height: 2.55rem;
+  padding-inline: var(--space-4);
+  font-size: 0.8rem;
+}
+
+@media (min-width: 48rem) {
+  .nav {
+    display: flex;
+  }
+}
+
